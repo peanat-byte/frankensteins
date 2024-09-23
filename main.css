@@ -29,6 +29,12 @@ h1 {
   color: #bbbbbb;
 }
 
+.page-brief {
+  display: flex;
+  justify-content: center;
+}
+
+
 /* MAIN PAGE ------------------------------------------------------------ */
 
 /* Main container centered on the page */
