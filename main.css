@@ -1,10 +1,14 @@
+* {
+  box-sizing: border-box; /* Include padding and border in width/height */
+}
+
 /* General dark mode setup */
 body {
   background-color: #121212;
   color: #e0e0e0;
   font-family: 'Arial', sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 5vw;
   height: 100vh;
 }
 
@@ -18,7 +22,6 @@ h1 {
 .back-to-main {
   display: flex;
   justify-content: flex-start;
-  padding: 20px;
 }
 
 .main-button {
@@ -32,6 +35,8 @@ h1 {
 .page-brief {
   display: flex;
   justify-content: center;
+  color: #b0b0b0;
+  font-size: 0.9rem;
 }
 
 
@@ -43,7 +48,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;  /* Full viewport height */
+  height: 100vh;
 }
 
 /* Button container to align the buttons */
@@ -51,13 +56,13 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 2em;
   width: 100%;
 }
 
 /* Button styling */
 .button {
-  padding: 15px 30px;
+  padding: 1em 2em;
   background-color: #1f1f1f;
   color: #ffffff;
   text-decoration: none;
@@ -69,16 +74,16 @@ h1 {
 
 /* Style for the main text */
 .main-text {
-  display: block; /* Ensures it's on its own line */
+  display: block;
   font-weight: bold;
-  padding-bottom: 10px;
+  padding-bottom: 1em;
 }
 
 /* Style for the subtext */
 .subtext {
-  display: block; /* Ensures it's on a new line */
-  font-size: 0.8rem; /* Smaller font size for the subtext */
-  color: #b0b0b0; /* Lighter color for the subtext */
+  display: block;
+  font-size: 0.8rem;
+  color: #b0b0b0;
   text-align: left;
 }
 
@@ -95,18 +100,18 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  padding: 3%;
+  gap: 2em;
+  margin-top: 2em;
 }
 
 /* Basic Card Styling */
 .card {
   background-color: #1f1f1f;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1em 2em rgba(0, 0, 0, 0.3);
   overflow: hidden;
   width: 17em;
-  height: 27em;
+  height: 28rem;
   cursor: pointer;
   transition: transform 0.3s ease, height 0.3s ease;
   display: flex;
@@ -122,8 +127,9 @@ h1 {
 
 /* Card Body */
 .card-body {
-  padding: 20px;
+  padding: 2em;
   text-align: center;
+  overflow-y: auto;
 }
 
 .card-body h3 {
@@ -132,7 +138,7 @@ h1 {
 }
 
 .card-body .description {
-  margin-top: 10px;
+  margin-top: 1em;
   color: #b0b0b0;
   text-align: left;
 }
@@ -146,42 +152,44 @@ h1 {
 /* PROJECTS -------------------------------------------------------------- */
 
 .large-container {
-  margin: 2% 5%;
+  margin-top: 2em;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  gap: 1em;
 }
 
 .large-card {
   background-color: #1f1f1f;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1em 2em rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  margin-bottom: 20px;
+  padding: 2em;
   transition: max-height 0.3s ease, transform 0.3s ease;
+  width: 70em; /* Default width */
+  max-width: 100%; /* Prevent growing beyond container */
+  flex-shrink: 1; /* Allows shrinking */
 }
 
 .large-card-header {
-  padding: 3em;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  gap: 2em;
+  text-align: center;
 }
 .large-card-header img {
-  width: 30%;
+  width: 20em;
   border-radius: 2px;
 }
 
 .large-card-body {
-  padding: 3em;
   display: none; /* Initially hidden */
 }
 .large-card-body img {
   width: 20em;
   border-radius: 2px;
-  margin: 1em 0em;
 }
 
 .large-card.expanded .large-card-body {
@@ -189,10 +197,5 @@ h1 {
 }
 
 .large-card.expanded {
-  transform: scale(1.01); /* Optional: Slight scale effect on expand */
+  transform: scale(1.01);
 }
-
-/* .toggle-indicator {
-  font-size: small;
-} */
-  
