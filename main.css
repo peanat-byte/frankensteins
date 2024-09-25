@@ -40,6 +40,17 @@ h1 {
   font-size: 0.9rem;
 }
 
+a {
+  color: #4db8ff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:visited {
+  color: #a3a3ff;
+}
+
 
 /* MAIN PAGE ------------------------------------------------------------ */
 
@@ -189,9 +200,10 @@ h1 {
 
 .large-card-body {
   display: none; /* Initially hidden */
+  line-height: 1.5rem;
 }
 .large-card-body img {
-  width: 20em;
+  width: 35em;
   border-radius: 2px;
   max-width: 100%; /* Prevent growing beyond container */
   flex-shrink: 1; /* Allows shrinking */

@@ -46,7 +46,22 @@
         <span class="toggle-indicator">Expand</span>
       </div>
       <div class="large-card-body">
-        <p></p>
+        <p>
+          These datasheets were legit lifesavers:<br>
+          <a href="https://www.skyworksinc.com/-/media/Skyworks/SL/documents/public/data-sheets/Si4704-05-D60.pdf">Si4704-05-D60</a><br>
+          <a href="https://www.st.com/content/ccc/resource/technical/document/datasheet/a4/5d/0b/0e/87/c4/4d/71/DM00088500.pdf/files/DM00088500.pdf/jcr:content/translations/en.DM00088500.pdf">STM32F030</a><br>
+          <a href="https://www.ti.com/lit/ds/symlink/lm386.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1725694655778">LM386</a><br><br>
+          <img src="images/proj_4b.png"><br>
+          Above is the radio receiver IC circuit. Going to just find some wire lying around for the antenna. We want to match the impedance of the antenna to the impedance of the PCB trace to reduce reflection, and this can be done with capacitors/inductors as explained here: <a href="https://www.antenna-theory.com/tutorial/smith/smithchart5.php">https://www.antenna-theory.com/tutorial/smith/smithchart5.php</a>.
+          Some capacitors to decouple power. RST pulled down to ground, connects to STM32 which will switch it on after it is powered on (to avoid possible corruption). <br><br>
+          <img src="images/proj_4c.png"><br>
+          Nothing much fancy here, just some buttons and LEDs and stuff. Datasheet says VDDA needs to be >= than VDD at all times so I hope the smaller capacitor does the trick lol. Also never tried using an oscillator before but apparently the built in oscillator is not that good. Too lazy to add USB so just going to flash with SWD.<br><br>
+          <img src="images/proj_4d.png"><br>
+          Audio amplifier. I added a ton of potentiometers so I can adjust the gain. Volume can also be communicated to the receiver IC from the microcontroller (allegedly). <br><br>
+          <img src="images/proj_4f.png"><br>
+          I expect the radio receiver stuff to be quite noisy. Tried my best to separate traces to the STM32 with a ground plane. I also kinda struggled placing vias so that they wouldn't cut off the ground plane in irregular ways and disrupt the return current.<br><br>
+          Updates to come about reflow, firmware, and testing; stay tuned! :))
+        </p>
       </div>
     </div>
 
