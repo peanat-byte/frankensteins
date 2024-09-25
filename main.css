@@ -10,6 +10,7 @@ body {
   margin: 0;
   padding: 5vw;
   height: 100vh;
+  font-size: 0.95rem;
 }
 
 h1 {
@@ -82,7 +83,7 @@ h1 {
 /* Style for the subtext */
 .subtext {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #b0b0b0;
   text-align: left;
 }
@@ -182,6 +183,8 @@ h1 {
 .large-card-header img {
   width: 20em;
   border-radius: 2px;
+  max-width: 100%; /* Prevent growing beyond container */
+  flex-shrink: 1; /* Allows shrinking */
 }
 
 .large-card-body {
@@ -190,6 +193,8 @@ h1 {
 .large-card-body img {
   width: 20em;
   border-radius: 2px;
+  max-width: 100%; /* Prevent growing beyond container */
+  flex-shrink: 1; /* Allows shrinking */
 }
 
 .large-card.expanded .large-card-body {
