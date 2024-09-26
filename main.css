@@ -40,17 +40,6 @@ h1 {
   font-size: 0.9rem;
 }
 
-a {
-  color: #4db8ff;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-a:visited {
-  color: #a3a3ff;
-}
-
 
 /* MAIN PAGE ------------------------------------------------------------ */
 
@@ -168,7 +157,18 @@ a:visited {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1em;
+  gap: 2em;
+}
+
+.large-container a {
+  color: #4db8ff;
+  text-decoration: none;
+}
+.large-container a:hover {
+  text-decoration: underline;
+}
+.large-container a:visited {
+  color: #a3a3ff;
 }
 
 .large-card {

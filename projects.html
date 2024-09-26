@@ -75,8 +75,15 @@
         <span class="toggle-indicator">Expand</span>
       </div>
       <div class="large-card-body">
-        <p></p>
-        <img src="images/proj_3b.JPG">
+        <p>
+          The 2024 Student Unmanned Aerial Systems Competition challenged us to build an autonomous aircraft that would recognize drop locations while in the air and deliver packages (water bottles) to these location. The autonomous actuated parachute system was part of our design. 
+          Below is a photo I took while debugging one of the parachute controllers outside at 2 am (just typical engineering things 😊). <br><br>
+          <img src="images/proj_3b.JPG"><br><br>
+          But my main (non administrative) contribution to this project was the parachute release system. Basically, I used an ESP32 integrate several core features. It had a UART link with the aircraft flight controller to retrieve GPS coordinates, wind speed, etc. and another UART to the Raspberry Pi performing image recognition in order to retrieve airdrop locations. It took me quite a bit of effort to figure out the communication with the flight controller, which used MAVlink protocol (see <a href="https://docs.google.com/document/d/1zcoyNXkLpVM52TL6w4KOIsLQ9JFzRrI6FuTp3FYnV9o/edit?usp=sharing">logbook</a> for the struggles 🙂). Then, this ESP also communicated wirelessly using ESP-NOW to the parachute microcontrollers to tell them which GPS coordinate they should steer to. Finally, it also sent commands to the servos that release the parachutes.
+          Phew!<br><br>
+          Also got to breathe in some solder fumes (i.e. soldering a circuit board for the system) which is always fun.<br><br>
+          See our <a href = https://youtu.be/uPUhEQwM66M?t=212>technical design video</a> for more details!
+        </p>
       </div>
     </div>
 
@@ -90,8 +97,11 @@
         <span class="toggle-indicator">Expand</span>
       </div>
       <div class="large-card-body">
-        <p></p>
-        <img src="images/proj_2b.png">
+        <p>
+          The competition goal for this project was drive a robot in simulation to read clue boards and avoid obstacles. I won't go through all the technical details of this project, but instead refer you to my <a href="https://docs.google.com/document/d/1qg5JYXiDFrrIvWMGPwTN0M9dttZtQwkD1yE36euqpI0/edit?usp=sharing">logbook</a>. Being in possession of a forgetful goldfish brain, I like to write extensive documentation, which serves as both a memory aid but also as a way for me to think through problems. The below image was actually taken from my logbook. (What in the world would I do without it?)<br><br>
+          <img src="images/proj_2b.png"><br><br>
+          One fun thing I did do in this project was train a YOLO neural network to detect obstacles. I knew this was a bit overkill (most other teams used color thresholding or frame differencing) but I wanted to take on the challenge because YOLO is cool. A few hundred manually labelled images later, I got obstacle detection working surprisingly well!
+        </p>
       </div>
     </div>
 
@@ -105,9 +115,14 @@
         <span class="toggle-indicator">Expand</span>
       </div>
       <div class="large-card-body">
-        <p></p>
-        <img src="images/proj_1b.png"><br>
-        <img src="images/proj_1c.png">
+        <p>
+          This competition was Mario Kart racing but in real life! In teams of four, we were tasked to follow a track around the competition surface while picking up mystery boxes, avoiding bombs, and navigating through shortcuts if so desired.<br><br>
+          I was really excited to learn how to design PCBs for our robot, so I binged a ton of YouTube videos (thank you <a href="https://www.youtube.com/@RobertFeranec">Robert Feranec</a> 🙏), made an H-bridge, and ordered it all before the course started haha. <br><br>
+          It turns out that that was a good idea, since I was able to jump start development of the driving system. It took me more than a week to finally get a robot using front wheel (Ackermann) steering to follow tape all arounnd the track. I encountered quite a few difficulties along the way, including finding the optimal tuning for PID, dealing with slow response time, sensor noise, etc. Being the first team to have a front wheel steering drive working, I also pioneered the method of using torque vectoring to navigate tight turns, which many other teams also adopted.<br><br>
+          <img src="images/proj_1b.png"><br><br>
+          <img src="images/proj_1c.png"><br><br>
+          Above is my second iteration of the H-bridge. My first one had a short since I did not realize that the manufacturer could not do blind vias. (Don't worry, it still worked! I just had to drill out the via haha.) At that time, I could actually draw the entire circuit from memory, and so finding the issue was quite easy with an oscilloscope. A more difficult issue I had to debug was actually caused by a defective batch of gate driver ICs that the lab had stocked.<br><br>
+        </p>
       </div>
     </div>
     
