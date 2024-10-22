@@ -47,7 +47,7 @@
       </div>
       <div class="large-card-body">
         <p>
-          These datasheets were legit lifesavers:<br>
+          These datasheets were prime reading material:<br>
           <a href="https://www.skyworksinc.com/-/media/Skyworks/SL/documents/public/data-sheets/Si4704-05-D60.pdf">Si4704-05-D60</a><br>
           <a href="https://www.st.com/content/ccc/resource/technical/document/datasheet/a4/5d/0b/0e/87/c4/4d/71/DM00088500.pdf/files/DM00088500.pdf/jcr:content/translations/en.DM00088500.pdf">STM32F030</a><br>
           <a href="https://www.ti.com/lit/ds/symlink/lm386.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1725694655778">LM386</a><br><br>
@@ -60,7 +60,8 @@
           Audio amplifier. I added a ton of potentiometers so I can adjust the gain. Volume can also be communicated to the receiver IC from the microcontroller (allegedly). <br><br>
           <img src="images/proj_4f.png"><br>
           I expect the radio receiver stuff to be quite noisy. Tried my best to separate traces to the STM32 with a ground plane. I also kinda struggled placing vias so that they wouldn't cut off the ground plane in irregular ways and disrupt the return current.<br><br>
-          Updates to come about reflow, firmware, and testing; stay tuned! :))
+          Below is the reflowed result! I had to do a bit of cleaning on the incredibly small pins, but other that it went quite well. (I never realized how shaky my hands were until I tried to place resistors the size of a salt grain (half joking).) What didn't go so well was I forgot to use the SPI pins of the STM32, so now I have to program the communication manually, although I saw on some forums that the standard SPI library doesn't work for some packages that have like very specific requirements. Definitely something to consider for next time though.<br><br>
+          <img src="images/proj_4g.jpg">
         </p>
       </div>
     </div>
@@ -98,7 +99,7 @@
       </div>
       <div class="large-card-body">
         <p>
-          The competition goal for this project was drive a robot in simulation to read clue boards and avoid obstacles. I won't go through all the technical details of this project, but instead refer you to my <a href="https://docs.google.com/document/d/1qg5JYXiDFrrIvWMGPwTN0M9dttZtQwkD1yE36euqpI0/edit?usp=sharing">logbook</a>. Being in possession of a forgetful goldfish brain, I like to write extensive documentation, which serves as both a memory aid but also as a way for me to think through problems. The below image was actually taken from my logbook. (What in the world would I do without it?)<br><br>
+          The competition goal for this project was drive a robot in Gazebo simulation with ROS (on Linux) to read clue boards and avoid obstacles. I won't go through all the technical details of this project, but instead refer you to my <a href="https://docs.google.com/document/d/1qg5JYXiDFrrIvWMGPwTN0M9dttZtQwkD1yE36euqpI0/edit?usp=sharing">logbook</a>. Being in possession of a forgetful goldfish brain, I like to write extensive documentation, which serves as both a memory aid but also as a way for me to think through problems. The below image was actually taken from my logbook. (What in the world would I do without it?)<br><br>
           <img src="images/proj_2b.png"><br><br>
           One fun thing I did do in this project was train a YOLO neural network to detect obstacles. I knew this was a bit overkill (most other teams used color thresholding or frame differencing) but I wanted to take on the challenge because YOLO is cool. A few hundred manually labelled images later, I got obstacle detection working surprisingly well!
         </p>
