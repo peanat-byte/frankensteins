@@ -49,7 +49,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 /* Button container to align the buttons */
@@ -57,19 +57,19 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2em;
+  gap: 2rem;
   width: 100%;
 }
 
 /* Button styling */
 .button {
-  padding: 1em 2em;
+  padding: 1rem 2rem;
   background-color: #1f1f1f;
   color: #ffffff;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 5px;
   font-size: 1.2rem;
-  width: 15em;
+  width: 20rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -77,7 +77,7 @@ h1 {
 .main-text {
   display: block;
   font-weight: bold;
-  padding-bottom: 1em;
+  padding-bottom: 1rem;
 }
 
 /* Style for the subtext */
@@ -101,35 +101,41 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2em;
-  margin-top: 2em;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 /* Basic Card Styling */
 .card {
   background-color: #1f1f1f;
-  border-radius: 10px;
-  box-shadow: 0 1em 2em rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  width: 17em;
-  height: 28rem;
+  width: 30rem;
+  height: 15rem;
   cursor: pointer;
   transition: transform 0.3s ease, height 0.3s ease;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  font-size: 0.9rem;
 }
 
 /* Card Header (for image) */
+.card-header {
+  flex: 0 0 40%;
+}
+
 .card-header img {
   width: 100%;
-  height: 14em;
+  height: 100%;
   object-fit: cover;
 }
 
 /* Card Body */
 .card-body {
-  padding: 2em;
-  text-align: center;
+  flex: 0 0 60%;
+  padding: 2rem;
+  text-align: left;
   overflow-y: auto;
 }
 
@@ -139,7 +145,7 @@ h1 {
 }
 
 .card-body .description {
-  margin-top: 1em;
+  margin-top: 1rem;
   color: #b0b0b0;
   text-align: left;
 }
@@ -153,11 +159,11 @@ h1 {
 /* PROJECTS -------------------------------------------------------------- */
 
 .large-container {
-  margin-top: 2em;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2em;
+  gap: 2rem;
 }
 
 .large-container a {
@@ -173,14 +179,15 @@ h1 {
 
 .large-card {
   background-color: #1f1f1f;
-  border-radius: 10px;
-  box-shadow: 0 1em 2em rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  padding: 2em;
+  padding: 2rem;
   transition: max-height 0.3s ease, transform 0.3s ease;
-  width: 70em; /* Default width */
+  width: 70rem; /* Default width */
   max-width: 100%; /* Prevent growing beyond container */
   flex-shrink: 1; /* Allows shrinking */
+  font-size: 0.9rem;
 }
 
 .large-card-header {
@@ -192,7 +199,7 @@ h1 {
   text-align: center;
 }
 .large-card-header img {
-  width: 20em;
+  width: 20rem;
   border-radius: 2px;
   max-width: 100%; /* Prevent growing beyond container */
   flex-shrink: 1; /* Allows shrinking */
@@ -203,7 +210,7 @@ h1 {
   line-height: 1.5rem;
 }
 .large-card-body img {
-  width: 35em;
+  width: 35rem;
   border-radius: 2px;
   max-width: 100%; /* Prevent growing beyond container */
   flex-shrink: 1; /* Allows shrinking */
