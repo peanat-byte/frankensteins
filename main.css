@@ -223,3 +223,18 @@ h1 {
 .large-card.expanded {
   transform: scale(1.01);
 }
+
+.video {
+  position: relative;
+  width: 100%;
+  max-width: 30rem;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.video iframe {
+  width: 100%;
+  height: 100%;
+}
