@@ -14,7 +14,7 @@
     <a href="index.html" class="main-button">Back to Main Page</a>
   </div>
 
-  <h1>Projects [Page Under Construction]</h1>
+  <h1>Projects</h1>
 
   <div class="page-brief">
     [ proj-ekts ] <br><br>1. Fun things!
@@ -91,11 +91,11 @@
             <iframe src="https://www.youtube.com/embed/QRR7AczA6NI" title="Linear Induction Motor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div><br>
 
-          The linear induction motor driver PCB features:
+          My favorite part was, of course, designing the linear induction motor driver PCB, which features:
           <ul>
-            <li>Three half bridges using high/low side gate drivers and NMOSFETs capable of 100V and 10A continuous</li>
-            <li>Inline current sensing with isolation amplifiers (sigma delta ADC isolation)</li>
-            <li>More spec details to be added... or you can ask me!</li>
+            <li>Three half bridges using high/low side gate drivers and NMOSFETs. The driver is capable of 5A continuous and 10A peak current at 100V.</li>
+            <li>Inline current sensing with 3mΩ shunt resistors and sigma delta isolation amplifiers. Current sense bandwidth reaches 100kHz but we sample at closer to 20kHz.</li>
+            
           </ul><br>
 
           <img src="images/proj_5b.jpg"><br><br>
@@ -103,7 +103,7 @@
           <img src="images/proj_5c.png"><br><br>
           <!-- <img src="images/proj_5d.jpg"> -->
 
-          There is much to be improved in this driver design, for example, reducing the inductance of the switch node - gate drive output loop. Plenty of optimizations to make for revision 2!
+          My design files can be found in our <a href="https://github.com/orgs/mini-maglev/repositories">team github repository</a> by the user peanat-byte. There is much to be improved in this driver design, for example, reducing the inductance of the switch node - gate drive output loop. Plenty of optimizations to make for revision 2!
         </p>
       </div>
     </div>
@@ -112,16 +112,32 @@
       <div class="large-card-header">
         <img src="images/proj_3a.png">
         <div>
-          <h2>Autonomous Steering Parachute System</h2>
+          <h2>Autonomous Actuated Parachute System</h2>
           <p></p>
         </div>
         <span class="toggle-indicator">Expand</span>
       </div>
       <div class="large-card-body">
         <p>
-          The 2024 Student Unmanned Aerial Systems Competition challenged us to build an autonomous aircraft that would recognize drop locations while in the air and deliver packages (water bottles) to these location. The autonomous actuated parachute system was part of our design. 
+          <!-- The 2024 Student Unmanned Aerial Systems Competition challenged us to build an autonomous aircraft that would recognize drop locations while in the air and deliver packages (water bottles) to these location. The autonomous actuated parachute system was part of our design. 
           Below is a photo from a late night sensor integration testing session. <br><br>
-          <img src="images/proj_3b.JPG">
+          <img src="images/proj_3b.JPG"> -->
+
+          The autonomous actuated parachute system is one of the projects that I led on the Uncrewed Aircraft Systems student design team.<br><br>
+          
+          As a lead, I did a fair bit of project management, but still dove into some technical work:
+          <ul>
+            <li>Defining the system: A master controller (ESP32) that retrieves information from the aircraft and communicates target locations to individual parachute controllers, which are then released and steer towards the targets.</li>
+            <li>Prototyping the parachute "flight controller" boards, which involved integrating sensors (GPS, IMU, barometer, and encoders) and steering servos.</li>
+            <li>Writing firmware that enables the master controller to talk to the aircraft flight controller (Mavlink protocol) and to the Raspberry Pi performing image recognition (UART) to retrieve aircraft sensor data and calculate airdrop locations.</li>
+          </ul>
+
+          Below is a summary video:<br><br>
+
+          <div class="video">
+            <iframe width="965" height="543" src="https://www.youtube.com/embed/uPUhEQwM66M?start=212" title="Technical Design &amp; Flight Readiness Video | SUAS 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+
           <!-- But my main (non administrative) contribution to this project was the parachute release system. Basically, I used an ESP32 integrate several core features. It had a UART link with the aircraft flight controller to retrieve GPS coordinates, wind speed, etc. and another UART to the Raspberry Pi performing image recognition in order to retrieve airdrop locations. It took me quite a bit of effort to figure out the communication with the flight controller, which used MAVlink protocol (see <a href="https://docs.google.com/document/d/1zcoyNXkLpVM52TL6w4KOIsLQ9JFzRrI6FuTp3FYnV9o/edit?usp=sharing">logbook</a> for the struggles 🙂). Then, this ESP also communicated wirelessly using ESP-NOW to the parachute microcontrollers to tell them which GPS coordinate they should steer to. Finally, it also sent commands to the servos that release the parachutes.
           Phew!<br><br>
           Also got to breathe in some solder fumes (i.e. soldering a circuit board for the system) which is always fun.<br><br>
@@ -144,7 +160,7 @@
           <!-- This competition was Mario Kart racing but in real life! In teams of four, we were tasked to follow a track around the competition surface while picking up mystery boxes, avoiding bombs, and navigating through shortcuts if so desired.<br><br>
           I was really excited to learn how to design PCBs for our robot, so I binged a ton of YouTube videos (thank you <a href="https://www.youtube.com/@RobertFeranec">Robert Feranec</a> 🙏), made an H-bridge, and ordered it all before the course started haha. <br><br>
           It turns out that that was a good idea, since I was able to jump start development of the driving system. It took me more than a week to finally get a robot using front wheel (Ackermann) steering to follow tape all around the track. I encountered quite a few difficulties along the way, including finding the optimal tuning for PID, dealing with slow response time, sensor noise, etc. Being the first team to have a front wheel steering drive working, I also pioneered the method of using torque vectoring to navigate tight turns, which many other teams also adopted.<br><br> -->
-          My very first (and very ugly) PCB was an H-bridge for an autonomous Mario Kart racing robot.<br><br>
+          My very first (and very ugly) PCB was an H-bridge for an autonomous Mario Kart racing robot. I completed the design very early on in the term after watching a couple youtube videos. The driver worked well enough, but I won't make any guarantees about signal integrity or EMI!<br><br>
           
           <img src="images/proj_1e.jpg"><br><br>
           <img src="images/proj_1c.png">
@@ -171,7 +187,9 @@
 
           <div class="video">
           <iframe src="https://www.youtube.com/embed/0iIUkvPsqnQ" title="Franka Impedance Controller" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
+          </div><br>
+
+          More details in our <a href="https://drive.google.com/file/d/1ARCfZ_UiL2HtbbHZUVExOR96fv6YwXmM/view?usp=sharing">project report</a>.
 
         </p>
       </div>
@@ -188,10 +206,9 @@
       </div>
       <div class="large-card-body">
         <p>
-          Description TODO...
-          <!-- The competition goal for this project was drive a robot in Gazebo simulation with ROS (on Linux) to read clue boards and avoid obstacles. I won't go through all the technical details of this project, but instead refer you to my <a href="https://docs.google.com/document/d/1qg5JYXiDFrrIvWMGPwTN0M9dttZtQwkD1yE36euqpI0/edit?usp=sharing">logbook</a>. Being in possession of a forgetful goldfish brain, I like to write extensive documentation, which serves as both a memory aid but also as a way for me to think through problems. The below image was actually taken from my logbook. (What in the world would I do without it?)<br><br>
+          The competition goal for this project was drive a robot in Gazebo simulation with ROS to read clue boards and avoid obstacles.<br><br>
           <img src="images/proj_2b.png"><br><br>
-          One fun thing I did do in this project was train a YOLO neural network to detect obstacles. I knew this was a bit overkill (most other teams used color thresholding or frame differencing) but I wanted to take on the challenge because YOLO is cool. A few hundred manually labelled images later, I got obstacle detection working surprisingly well! -->
+          One fun thing I did do in this project was train a YOLO neural network to detect obstacles. I knew this was a bit overkill (most other teams used color thresholding or frame differencing) but I wanted to try something new. A few hundred manually labelled images later, I got obstacle detection working surprisingly well!
         </p>
       </div>
     </div>
